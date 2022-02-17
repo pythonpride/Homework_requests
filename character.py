@@ -17,7 +17,6 @@ def intelligencest_character(list_character):
 
     print(f' Самый умный супергерой - {intelligencest_char} \n intelligence = {character_dict[intelligencest_char]}')
 
-
 character_list = ['Hulk', 'Captain America', 'Thanos']
 intelligencest_character(character_list)
 
