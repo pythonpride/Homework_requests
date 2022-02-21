@@ -20,10 +20,11 @@ class YaUploader:
 
     def upload(self, files_path:str):
         href = self._get_upload_link(files_path).get("href", "")
-        response = requests.put(href, data=open(files_path, 'rb'))
-        response.raise_for_status()
-        if response.status_code == 201:
-            print("Success")
+        with open(files_path, 'rb') as f:            
+            response = requests.put(href, data=f)
+            response.raise_for_status()
+            if response.status_code == 201:
+                print("Success")
 
     
 if __name__ == '__main__':
